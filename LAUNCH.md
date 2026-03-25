@@ -78,9 +78,9 @@ Private beta with a small group of real users.
 - [ ] Observe editor usability closely — this is the most important thing to get right
 - [ ] Fix reported issues: bugs, confusing UX, missing edge cases
 - [ ] No new features during this phase — only fixes
-- [ ] Create the service's own Gemini capsule at `gemini://yourdomain.com` explaining the project (use your own service)
-- [ ] Write the Terms of Service, Privacy Policy, and DMCA pages (have a lawyer review ToS)
-- [ ] Test backup restoration with real user data
+- [x] Create the service's own Gemini capsule at `gemini://gemcities.com` explaining the project (use your own service)
+- [x] Write the Terms of Service, Privacy Policy, and DMCA pages — reviewed and finalized 2026-03-25
+- [x] Test backup restoration with real user data — tested 2026-03-25 using calvusrex account
 
 **Phase 3 complete when:** No critical bugs outstanding, feedback incorporated, legal pages reviewed.
 

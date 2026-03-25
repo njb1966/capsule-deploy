@@ -38,7 +38,7 @@ Single VPS. No microservices. No Kubernetes. No complexity.
 * SQLite database — no separate database server
 * Agate Gemini server
 * Caddy web server
-* Restic backups to Backblaze B2
+* Restic backups via SFTP
 
 Boring technology, on purpose.
 
