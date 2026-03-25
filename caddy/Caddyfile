@@ -1,0 +1,32 @@
+# GemCities — Caddyfile
+# Caddy handles HTTPS for the web UI automatically via Let's Encrypt.
+# Gemini TLS is handled separately by Agate using a wildcard cert.
+#
+# Place this file at /etc/caddy/Caddyfile on the server.
+# Reload with: systemctl reload caddy
+
+gemcities.com, www.gemcities.com {
+
+    # Static files for the editor frontend
+    root * /srv/capsule-editor/public
+
+    # Proxy API requests to the Go backend
+    reverse_proxy /api/* 127.0.0.1:8080
+
+    # Clean URLs: /terms → /terms.html, /privacy → /privacy.html, etc.
+    try_files {path} {path}.html {path}/index.html
+
+    file_server
+
+    # Gzip compression for text content
+    encode gzip
+
+    # Security headers
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        Referrer-Policy no-referrer
+        # Remove Caddy's Server header
+        -Server
+    }
+}

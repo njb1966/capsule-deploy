@@ -1,0 +1,61 @@
+# Frequently Asked Questions
+
+## What is Gemini?
+
+Gemini is a lightweight internet protocol, somewhere between Gopher and the web. It serves text documents in a simple format called gemtext. There are no images, no scripts, no ads, no tracking. Just text and links.
+
+Gemini clients (browsers) are small, fast, and available for most platforms.
+
+=> https://geminiprotocol.net  The Gemini protocol
+
+## What is a capsule?
+
+What Gemini calls a site is a capsule. What it calls a page is a gemtext document. The terminology reflects that Gemini is its own thing, not a stripped-down version of the web.
+
+## Is GemCities really free?
+
+Yes. No tiers, no paid plans, no premium features. The service runs on donations. If it ever became unsustainable, we would give at least 30 days notice and a way to export everything before shutting down.
+
+## How much storage do I get?
+
+50 MB per capsule. Gemtext files are plain text — typical posts are 2–5 KB. You would need to write a lot to get close to the limit.
+
+## What file types can I publish?
+
+Gemtext files (.gmi) only, through the web editor. The editor does not support uploading other file types. This is intentional — GemCities is a writing tool for the text-only Gemini protocol, not a file host.
+
+## Can I use a custom domain?
+
+No. Capsules are served at username.gemcities.com. Custom domains are not supported and are not planned.
+
+## Is my content private?
+
+Gemini has no access controls — anything you publish is publicly accessible to anyone with a Gemini client. Do not publish content you want to keep private.
+
+## What happens to my data if I delete my account?
+
+Your email, username, password hash, and all capsule files are deleted immediately and permanently. There is no grace period. Your data may persist in rolling backups for up to 30 days before being overwritten.
+
+## Can I export my content?
+
+Yes. One click in the editor exports all your .gmi files as a ZIP archive. You own your content and can leave at any time.
+
+## What is not allowed?
+
+Short version: illegal content, threats and harassment, hate speech, doxxing, and copyright infringement.
+
+=> https://gemcities.com/terms  Full Terms of Service
+
+## How do I report abuse?
+
+Email abuse@gemcities.com. We aim to review reports within 48 hours.
+
+## Where is the source code?
+
+=> https://github.com/njb1966  GemCities on GitHub
+
+All server software is published under AGPL-3.0.
+
+---
+
+=> gemini://gemcities.com/index.gmi  Back to home

@@ -1,0 +1,61 @@
+# About GemCities
+
+GemCities is a free Gemini capsule hosting service. The goal is to reduce the barrier to publishing on the Gemini small web to near zero — no server knowledge required, no command line, just sign up and write.
+
+One-line version: Geocities for Gemini, run ethically, forever simple.
+
+---
+
+## What This Is
+
+A piece of infrastructure for people who want to publish on the Gemini small web without managing a server.
+
+It is not a social network. It is not competing with WordPress or Substack. It is not trying to grow into something larger. It is not optimizing for retention, engagement, or growth metrics.
+
+---
+
+## Hard Commitments
+
+These are not aspirations. They are constraints.
+
+No surveillance. People who read capsules are not tracked in any way. Access logs do not record reader IPs, which capsules are visited, or how long anyone spends reading. Agate access logging is disabled.
+
+No engagement mechanics. No likes, no follower counts, no trending sections, no algorithmic promotion.
+
+No ads. Not now, not if the service grows, not as a trade-off for anything.
+
+Easy exit. You can export all your content as raw gemtext files with one click. The service will never feel like a trap.
+
+Open source. All server software is published under AGPL-3.0. If this service shuts down tomorrow, the ecosystem survives.
+
+---
+
+## The Stack
+
+Single VPS. No microservices. No Kubernetes. No complexity.
+
+* Go backend, compiled to a single binary
+* SQLite database — no separate database server
+* Agate Gemini server
+* Caddy web server
+* Restic backups to Backblaze B2
+
+Boring technology, on purpose.
+
+---
+
+## Funding
+
+GemCities is funded by donations. There are no tiers, no paid plans, no premium features. If you find it useful and want to help cover the ~$14/month in operating costs, donations are welcome.
+
+The service is designed to be cheap to run. Gemtext files average a few kilobytes. The hardware can handle tens of thousands of capsules with significant headroom.
+
+---
+
+## Who Runs This
+
+GemCities is operated by Nick Burchett. One person, one server, no investors, no growth targets.
+
+Contact: abuse@gemcities.com
+
+=> gemini://gemcities.com/index.gmi  Back to home

@@ -1,0 +1,64 @@
+# GemCities — capsule-service configuration template
+#
+# Copy this file to /srv/capsule-service/config.toml on the server.
+# Replace all <placeholder> values before starting the service.
+#
+# Secrets (SMTP credentials, JWT secret) must NOT be stored here.
+# They live in /etc/capsule-service/env — see the systemd unit for details.
+
+[server]
+# Address the Go backend listens on. Caddy proxies /api/* here.
+listen = "127.0.0.1:8080"
+
+# Root directory for all user capsule files.
+# Each user's capsule lives at {capsules_root}/{username}.gemcities.com/
+capsules_root = "/srv/capsules"
+
+# SQLite database path.
+db_path = "/var/lib/capsule-service/users.db"
+
+# Application log path. Errors and failed auth attempts only.
+# No user reading behavior or IP addresses of readers are logged here.
+log_path = "/var/log/capsule-service/app.log"
+
+# Domain used to construct capsule subdomains and verification email links.
+domain = "gemcities.com"
+
+[email]
+# Brevo SMTP relay — credentials come from the environment file, not here.
+smtp_host = "smtp-relay.brevo.com"
+smtp_port = 587
+from_address = "admin@gemcities.com"
+from_name = "GemCities"
+
+# SMTP credentials are read from environment variables:
+#   SMTP_USERNAME — Brevo account email
+#   SMTP_PASSWORD — Brevo SMTP key (Settings → SMTP & API → SMTP Keys)
+
+[limits]
+# Per-file size cap. Gemtext files are kilobytes — 1 MB is generous.
+max_file_size_bytes = 1048576        # 1 MB
+
+# Per-user total storage cap.
+max_total_storage_bytes = 52428800   # 50 MB
+
+# Maximum number of files per user (across all directories).
+max_files_per_user = 500
+
+# Maximum login attempts before rate limiting kicks in.
+max_login_attempts_per_hour = 10
+
+# Maximum registration attempts per IP per hour.
+max_register_attempts_per_hour = 5
+
+[auth]
+# JWT signing secret. Read from JWT_SECRET environment variable.
+# Generate once at setup: openssl rand -hex 32
+# Do not hardcode here.
+# jwt_secret = ""    # set via JWT_SECRET env var
+
+# How long a login session lasts before requiring re-authentication.
+session_duration_days = 30
+
+# bcrypt work factor. 12 is the recommended minimum.
+bcrypt_cost = 12

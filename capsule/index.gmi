@@ -1,0 +1,54 @@
+# GemCities
+
+Free Gemini capsule hosting. No server required.
+
+Sign up, write gemtext, publish. That is the whole thing.
+
+=> https://gemcities.com  Sign up or log in (web)
+
+---
+
+## What You Get
+
+* A capsule at username.gemcities.com
+* A web-based gemtext editor with live preview
+* 50 MB of storage — generous for plain text
+* One-click export of all your files at any time
+* No ads, no tracking, no analytics. Ever.
+
+The service is free and supported by donations.
+
+---
+
+## Getting Started
+
+=> https://gemcities.com/register  Create an account
+=> https://gemcities.com/editor    Open the editor
+
+If you are new to Gemini, a capsule is what this protocol calls a site. Gemtext is the simple text format used to write them. The editor on the web side will show you a live preview as you write.
+
+---
+
+## About the Service
+
+=> gemini://gemcities.com/about.gmi  About GemCities
+=> gemini://gemcities.com/faq.gmi    Frequently asked questions
+
+---
+
+## Policies and Contact
+
+=> https://gemcities.com/terms    Terms of Service
+=> https://gemcities.com/privacy  Privacy Policy
+=> https://gemcities.com/dmca     DMCA Policy
+
+Abuse reports: abuse@gemcities.com
+Security issues: security@gemcities.com
+
+---
+
+## Source Code
+
+GemCities is free software, published under the AGPL-3.0 license. If this service ever shuts down, you can run the same stack yourself.
+
+=> https://github.com/njb1966  Source code on GitHub

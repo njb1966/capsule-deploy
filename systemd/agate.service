@@ -1,0 +1,52 @@
+[Unit]
+Description=Agate Gemini server
+Documentation=https://github.com/mbrubeck/agate
+After=network.target
+
+[Service]
+Type=simple
+User=agate
+Group=agate
+
+# Agate virtual hosting: each hostname's capsule content lives in a
+# subdirectory named after the hostname within --content.
+#
+# Directory layout:
+#   /srv/capsules/
+#     gemcities.com/          ← service capsule (from capsule-deploy/capsule/)
+#     alice.gemcities.com/    ← user capsule for 'alice' (created by capsule-service)
+#     bob.gemcities.com/      ← user capsule for 'bob'
+#
+# The Go backend (capsule-service) creates subdirectories named
+# {username}.gemcities.com when a new account is registered.
+#
+# TLS: Agate expects a wildcard cert covering both gemcities.com and
+# *.gemcities.com. Obtain via DNS-01 challenge with acme.sh or certbot.
+# See scripts/setup-tls.sh for the issuance command.
+
+ExecStart=/usr/local/bin/agate \
+    --content /srv/capsules \
+    --cert /etc/ssl/gemini/gemcities.com.crt \
+    --key /etc/ssl/gemini/gemcities.com.key \
+    --addr 0.0.0.0:1965 \
+    --hostname gemcities.com \
+    --hostname "*.gemcities.com" \
+    --log-ip never
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=agate
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/srv/capsules
+ReadWritePaths=/var/log/agate
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
