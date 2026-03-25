@@ -50,7 +50,7 @@ Require email verification before capsule goes live. Single most effective filte
 Plain-language ToS agreed to at registration. Establishes the rules clearly and provides the legal basis for account suspension.
 
 ### Layer 3 — Abuse Reporting
-Published abuse email address: `abuse@yourdomain.com`. Linked from every page of the web UI and from the service's own Gemini capsule. Monitored by the operator. Target: review and act within 48 hours of receiving a report.
+Published abuse email address: `abuse@gemcities.com`. Linked from every page of the web UI and from the service's own Gemini capsule. Monitored by the operator. Target: review and act within 48 hours of receiving a report.
 
 ### Layer 4 — Periodic Spot-Checks
 Occasional manual review of newly created capsules — not reading every word, just a brief check of new accounts. Think of this as a librarian walking the stacks, not surveillance. Catches obvious problems without automated monitoring.

@@ -25,15 +25,15 @@ log_path = "/var/log/capsule-service/app.log"
 domain = "gemcities.com"
 
 [email]
-# Brevo SMTP relay — credentials come from the environment file, not here.
-smtp_host = "smtp-relay.brevo.com"
+# Protonmail SMTP — credentials come from the environment file, not here.
+smtp_host = "smtp.protonmail.ch"
 smtp_port = 587
 from_address = "admin@gemcities.com"
 from_name = "GemCities"
 
 # SMTP credentials are read from environment variables:
-#   SMTP_USERNAME — Brevo account email
-#   SMTP_PASSWORD — Brevo SMTP key (Settings → SMTP & API → SMTP Keys)
+#   SMTP_USERNAME — admin@gemcities.com
+#   SMTP_PASSWORD — Protonmail app password (Settings → Security → App passwords)
 
 [limits]
 # Per-file size cap. Gemtext files are kilobytes — 1 MB is generous.

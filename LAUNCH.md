@@ -65,7 +65,7 @@ Build and deploy the Go backend and editor frontend.
 
 **Phase 2 complete when:** Full registration → edit → publish → export flow works end to end on the live server.
 
-**COMPLETED: 2026-03-24** — Full flow tested live. Email via Brevo (admin@gemcities.com). Legal pages still needed before Phase 3.
+**COMPLETED: 2026-03-24** — Full flow tested live. Email via admin@gemcities.com (Protonmail SMTP). Legal pages still needed before Phase 3.
 
 ---
 

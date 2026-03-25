@@ -153,4 +153,4 @@ If a security issue is discovered:
 4. Document what happened, what was done, and what changed in the private incident log
 5. If the issue affects other Gemini hosts using Agate: notify upstream responsibly
 
-No public bug bounty program — but a security contact email address (`security@yourdomain.com`) should be published.
+No public bug bounty program — but a security contact email address (`security@gemcities.com`) should be published.

@@ -191,7 +191,7 @@ Credentials are never stored in `config.toml` (which may be committed to the rep
 
 Contents:
 ```
-SMTP_USERNAME=you@proton.me
+SMTP_USERNAME=admin@gemcities.com
 SMTP_PASSWORD=<proton-app-password>   # generated in Proton Settings → Security → App passwords
 JWT_SECRET=<random-64-char-string>    # generated once at setup: openssl rand -hex 32
 ```
