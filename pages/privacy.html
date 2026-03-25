@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — GemCities</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="site-name">GemCities</a>
+  </header>
+
+  <main class="prose">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 2026-03-24</p>
+
+    <p>GemCities is a free Gemini capsule hosting service. This policy explains what information we collect, what we do not collect, and how your data is handled. We have tried to write this plainly.</p>
+
+    <h2>What We Collect</h2>
+    <p>When you create an account, we store:</p>
+    <ul>
+      <li><strong>Email address</strong> — used to verify your account and send password reset messages. Nothing else.</li>
+      <li><strong>Username</strong> — becomes your capsule's subdomain (<code>username.gemcities.com</code>).</li>
+      <li><strong>Password hash</strong> — your password is hashed with bcrypt before storage. We never store your password in plain text and cannot recover it.</li>
+      <li><strong>Your capsule files</strong> — the gemtext files you create and edit through the editor.</li>
+    </ul>
+    <p>That is everything. There is no profile, no bio field, no display name separate from your username, no avatar.</p>
+
+    <h2>What We Do Not Collect</h2>
+    <p>We are deliberate about this.</p>
+    <ul>
+      <li><strong>No visitor tracking.</strong> We do not log IP addresses of people who read Gemini capsules. We do not record which capsules are visited, how long a visitor spends reading, or where they came from. Agate (the Gemini server) access logging is disabled.</li>
+      <li><strong>No analytics.</strong> No pageview counters, no session data, no heatmaps, no usage statistics tied to individuals.</li>
+      <li><strong>No tracking pixels or third-party scripts.</strong> The editor frontend loads no external resources of any kind.</li>
+      <li><strong>No advertising data.</strong> There are no ads. There is no ad network. There never will be.</li>
+      <li><strong>No reading behavior.</strong> We do not track what you read, what you search for, or how you use the editor beyond what is needed for the editor to function.</li>
+    </ul>
+
+    <h2>How We Use Your Data</h2>
+    <p>Your email address is used for:</p>
+    <ul>
+      <li>Verifying your account when you register.</li>
+      <li>Sending password reset emails when you request them.</li>
+      <li>Contacting you if there is an issue with your account (e.g., a valid abuse report against content you posted).</li>
+    </ul>
+    <p>Your email is never used for newsletters, promotional messages, or any communication you did not initiate. It is never shared with third parties.</p>
+
+    <h2>Email Delivery</h2>
+    <p>Transactional emails (verification, password reset) are sent via Brevo. Brevo receives your email address for the sole purpose of delivering these messages. Brevo's privacy policy applies to their handling of that data. We do not share any other information with them.</p>
+
+    <h2>Data Retention</h2>
+    <p>Your data is retained for as long as your account exists. When you delete your account:</p>
+    <ul>
+      <li>Your email address, username, and password hash are deleted from the database immediately.</li>
+      <li>All capsule files are deleted from disk immediately.</li>
+      <li>There is no grace period or soft-delete. Deletion is permanent.</li>
+    </ul>
+    <p>Backups are retained for 30 days on a rolling basis. Your data may persist in backups for up to 30 days after account deletion before it is overwritten.</p>
+
+    <h2>Third-Party Sharing</h2>
+    <p>We do not sell, rent, trade, or share your personal data with any third party, except as required by law or as described under Email Delivery above.</p>
+    <p>If we receive a valid legal demand (subpoena, court order) for your data, we will comply with applicable law. We will notify you of any such demand if we are legally permitted to do so.</p>
+
+    <h2>Security</h2>
+    <p>Passwords are hashed with bcrypt (cost factor 12) before storage. All web traffic is served over HTTPS. Sessions use httpOnly cookies. Failed login attempts are rate-limited. The application logs errors and failed authentication attempts (IP address and timestamp only) for security purposes — these logs do not contain usernames and are not retained long-term.</p>
+
+    <h2>Your Rights</h2>
+    <p>You can:</p>
+    <ul>
+      <li><strong>Export your data</strong> at any time from the editor — one click downloads all your capsule files as a ZIP archive.</li>
+      <li><strong>Delete your account</strong> from the account settings page. Deletion is immediate and permanent.</li>
+      <li><strong>Update your email or password</strong> from account settings at any time.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>GemCities is not directed at children under 13. We do not knowingly collect information from children under 13. If you believe a child under 13 has created an account, contact <a href="mailto:abuse@gemcities.com">abuse@gemcities.com</a> and we will delete the account.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If we make material changes to this policy, we will update the date at the top of this page. We will not make this policy less protective of your data without clear notice.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="mailto:abuse@gemcities.com">abuse@gemcities.com</a></p>
+  </main>
+
+  <footer>
+    <a href="/terms">Terms of Service</a> ·
+    <a href="/privacy">Privacy Policy</a> ·
+    <a href="/dmca">DMCA</a> ·
+    <a href="mailto:abuse@gemcities.com">Report Abuse</a>
+  </footer>
+</body>
+</html>
