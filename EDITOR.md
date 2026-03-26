@@ -50,7 +50,7 @@ Three-panel layout on desktop, collapsible on mobile:
 - Font size: 15px
 - Soft wrap enabled
 - Tab key inserts 2 spaces (not a tab character — tabs cause issues in gemtext)
-- No spell-check forced on (browser default)
+- Browser spell-check enabled by default (users may disable it in their browser settings)
 - Line numbers: optional, off by default
 - Auto-saves to localStorage every 30 seconds as a draft (not to server — prevents accidental overwrites)
 - Unsaved changes indicator in the top bar (e.g. a dot next to the filename)
@@ -122,12 +122,19 @@ Shortcuts displayed in a help overlay accessible via `?` key or help icon.
 3. Unsaved indicator cleared on success
 4. Error toast on failure (network error, storage limit exceeded, etc.)
 
-### Rename
-1. Right-click file → Rename, or click filename in top bar
-2. Inline edit of filename
-3. PATCH request to `/api/file/<path>` with new name
+### Rename (file)
+1. Right-click file → Rename, or select file and click Rename in top bar
+2. Modal prompt: pre-filled with current filename
+3. POST request to `/api/files/rename` with old and new path
 4. File tree updates
 5. Note displayed: "Links to this file in other pages are not automatically updated"
+
+### Rename (folder)
+1. Right-click folder → Rename, or select folder and click Rename in top bar
+2. Modal prompt: pre-filled with current folder name
+3. POST request to `/api/files/rename` with old and new path
+4. File tree updates; expanded-folder state updated to new path
+5. Warning toast: "Folder renamed. Links to files inside may be broken."
 
 ### Delete
 1. Right-click file → Delete
