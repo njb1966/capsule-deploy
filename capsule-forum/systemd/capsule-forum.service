@@ -1,0 +1,21 @@
+[Unit]
+Description=GemCities Forum (Gemini)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=capsule-forum
+Group=capsule-forum
+ExecStart=/usr/local/bin/capsule-forum /etc/capsule-forum/config.toml
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ReadWritePaths=/var/lib/capsule-forum
+
+[Install]
+WantedBy=multi-user.target

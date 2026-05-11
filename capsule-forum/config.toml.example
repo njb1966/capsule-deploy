@@ -1,0 +1,6 @@
+host     = "0.0.0.0"
+port     = 1965
+hostname = "forum.gemcities.com"
+cert_file = "/etc/capsule-forum/cert.pem"
+key_file  = "/etc/capsule-forum/key.pem"
+db_path   = "/var/lib/capsule-forum/forum.db"
