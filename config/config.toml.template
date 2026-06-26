@@ -1,6 +1,6 @@
 # GemCities — capsule-service configuration template
 #
-# Copy this file to /srv/capsule-service/config.toml on the server.
+# Copy this file to /etc/capsule-service/config.toml on the server.
 # Replace all <placeholder> values before starting the service.
 #
 # Secrets (SMTP credentials, JWT secret) must NOT be stored here.
