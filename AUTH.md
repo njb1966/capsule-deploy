@@ -86,8 +86,8 @@ Plus a maintained list of common offensive terms (maintain separately, do not ha
 
 1. User clicks "Forgot password" on login page
 2. Enters email address
-3. If email exists: single-use reset token generated, hashed and stored in `password_reset_tokens` table, email sent with link
-4. If email does not exist: same response shown (do not reveal whether email is registered)
+3. If a verified account exists for that email: single-use reset token generated, hashed and stored in `password_reset_tokens` table, email sent with link
+4. If no verified account exists: same response shown (do not reveal whether email is registered or verified)
 5. Reset link valid for **1 hour**
 6. Single-use: token marked `used = 1` immediately on first visit to reset page
 7. User sets new password on reset page
@@ -103,9 +103,13 @@ Plus a maintained list of common offensive terms (maintain separately, do not ha
 | POST `/api/login` | 10 attempts per 15 minutes per IP |
 | POST `/api/register` | 5 registrations per hour per IP |
 | POST `/api/password-reset-request` | 3 requests per hour per IP |
-| All other API endpoints | 120 requests per minute per authenticated user |
+| Authenticated file/account API endpoints | 60 requests per minute per IP |
 
 Rate limit responses return HTTP 429 with a `Retry-After` header.
+
+Registration also includes a hidden honeypot field. If it is filled, the request is accepted without creating an account or sending email.
+
+Unverified accounts older than 48 hours are automatically deleted. Verified accounts are never affected by this cleanup.
 
 ---
 
@@ -122,8 +126,8 @@ Rate limit responses return HTTP 429 with a `Retry-After` header.
 ## Email Addresses
 
 - Stored in database
-- Used only for: email verification, password reset, critical service notices
-- Never shared, never used for marketing, never used for any form of engagement communication
+- Used only for: email verification, password reset, critical service notices, and optional announcements/feedback requests if the user explicitly opts in
+- Never shared, never used for marketing, never used for any optional engagement communication without opt-in
 - Users can change email address in account settings (re-verification required)
 
 ---

@@ -9,10 +9,8 @@ Type=simple
 User=capsule
 Group=capsule
 
-WorkingDirectory=/srv/capsule-service
-
 # The binary and its config file.
-ExecStart=/srv/capsule-service/capsule-service -config /srv/capsule-service/config.toml
+ExecStart=/usr/local/bin/capsule-service /etc/capsule-service/config.toml
 
 # Secrets are loaded from this file (chmod 600, owned by root).
 # Contains: SMTP_USERNAME, SMTP_PASSWORD, JWT_SECRET
@@ -32,7 +30,7 @@ SyslogIdentifier=capsule-service
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true
-ReadWritePaths=/srv/capsules /var/lib/capsule-service /var/log/capsule-service
+ReadWritePaths=/srv/capsules /var/lib/capsule-service /var/log/capsule-service /etc/capsule-service
 PrivateTmp=true
 PrivateDevices=true
 

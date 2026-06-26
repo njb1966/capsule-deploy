@@ -31,7 +31,7 @@ deploy_frontend() {
 deploy_backend() {
     echo "==> Building backend..."
     git -C "$SERVICE_REPO" pull --ff-only
-    (cd "$SERVICE_REPO" && go build -o /tmp/capsule-service-new .)
+    (cd "$SERVICE_REPO" && go build -buildvcs=false -o /tmp/capsule-service-new .)
     echo "    Stopping service..."
     systemctl stop "$SERVICE_NAME"
     cp /tmp/capsule-service-new "$BINARY_DEST"

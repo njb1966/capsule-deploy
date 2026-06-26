@@ -86,9 +86,9 @@ When Agate receives a request for `gemini://alice.yourdomain.com/index.gmi`, it 
   bob/
     index.gmi
 
-/srv/capsule-service/                 # Go application
-  capsule-service                     # compiled binary
-  config.toml                         # app config
+/opt/capsule-service/                 # Go application source checkout
+/usr/local/bin/capsule-service        # compiled binary
+/etc/capsule-service/config.toml      # app config
 
 /var/lib/capsule-service/             # persistent app data
   users.db                            # SQLite database
@@ -157,7 +157,7 @@ Example error codes:
 ### Config File Structure
 
 ```toml
-# /srv/capsule-service/config.toml
+# /etc/capsule-service/config.toml
 [server]
 listen = "127.0.0.1:8080"      # Caddy proxies to this
 capsules_root = "/srv/capsules"
@@ -230,6 +230,7 @@ CREATE TABLE users (
     email       TEXT UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,         -- bcrypt
     email_verified INTEGER DEFAULT 0,
+    announcement_opt_in INTEGER DEFAULT 0,
     created_at  TEXT NOT NULL,
     storage_used_bytes INTEGER DEFAULT 0
 );

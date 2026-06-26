@@ -45,11 +45,11 @@ max_total_storage_bytes = 52428800   # 50 MB
 # Maximum number of files per user (across all directories).
 max_files_per_user = 500
 
-# Maximum login attempts before rate limiting kicks in.
-max_login_attempts_per_hour = 10
-
-# Maximum registration attempts per IP per hour.
-max_register_attempts_per_hour = 5
+# Auth abuse limits are enforced in the application:
+# - login: 10 attempts per 15 minutes per IP
+# - registration: 5 attempts per hour per IP
+# - password reset requests: 3 attempts per hour per IP
+# - stale unverified accounts are deleted after 48 hours
 
 [auth]
 # JWT signing secret. Read from JWT_SECRET environment variable.
