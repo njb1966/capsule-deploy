@@ -1,38 +1,13 @@
 [Unit]
-Description=GemCities capsule-service (Go backend)
-Documentation=https://github.com/njb1966/capsule-service
+Description=Gemcities Capsule Service
 After=network.target
-# Ensure the service restarts if it crashes.
+Wants=network.target
 
 [Service]
-Type=simple
-User=capsule
-Group=capsule
-
-# The binary and its config file.
 ExecStart=/usr/local/bin/capsule-service /etc/capsule-service/config.toml
-
-# Secrets are loaded from this file (chmod 600, owned by root).
-# Contains: SMTP_USERNAME, SMTP_PASSWORD, JWT_SECRET
-# See config/config.toml.template for details.
 EnvironmentFile=/etc/capsule-service/env
-
-# Restart on any failure except a clean exit (e.g. admin stop).
 Restart=on-failure
 RestartSec=5
-
-# Logging — output goes to journald.
-StandardOutput=journal
-StandardError=journal
-SyslogIdentifier=capsule-service
-
-# Hardening
-NoNewPrivileges=true
-ProtectSystem=strict
-ProtectHome=true
-ReadWritePaths=/srv/capsules /var/lib/capsule-service /var/log/capsule-service /etc/capsule-service
-PrivateTmp=true
-PrivateDevices=true
 
 [Install]
 WantedBy=multi-user.target
